@@ -68,3 +68,18 @@ def download_and_extract_censo_escolar(ano_base):
             print("File {file} could not be removed").format(
                 file=file_to_extract.split(os.sep)[-1]
             )
+
+    list_of_zip_files=[filename for filename in list_of_files if filename.endswith('.rar')]
+
+    print(list_of_zip_files)
+
+    for file_to_extract in list_of_zip_files:
+
+        with zipfile.ZipFile(file_to_extract, "r") as zip_file:
+            zip_file.extractall(os.path.dirname(file_to_extract))
+        try:
+            os.remove(file_to_extract)
+        except:
+            print("File {file} could not be removed").format(
+                file=file_to_extract.split(os.sep)[-1]
+            )
