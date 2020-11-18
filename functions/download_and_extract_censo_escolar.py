@@ -69,7 +69,7 @@ def download_and_extract_censo_escolar(ano_base):
                 file=file_to_extract.split(os.sep)[-1]
             )
 
-    list_of_zip_files=[filename for filename in list_of_files if filename.endswith('.rar')]
+    list_of_zip_files=[filename for filename in list_of_files if filename.endswith('.zip')]
 
     print(list_of_zip_files)
 
